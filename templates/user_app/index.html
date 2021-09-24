@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+
+{% extends 'user_app/base.html' %}
+
+{% block body_block %}
+
+<div class="row">
+  <div class="col">
+
+    <div class="jumbotron">
+
+      {% if user.is_authenticated %}
+
+      <h1>Hi, {{user.first_name}}</h1>
+
+      {% else %}
+
+      <h1>Hi. Please login first</h1>
+
+      {% endif %}
+
+    </div>
+
+  </div>
+
+</div>
+
+{% endblock %}

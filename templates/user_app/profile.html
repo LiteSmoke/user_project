@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+
+{% extends 'user_app/base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block body_block %}
+
+  <form action="{% url 'user_app:profile' %}" method="post">
+    {% csrf_token %}
+
+    {{user_form}}
+
+    {{user_info_form}}
+
+    <input type="submit" class="btn btn-success" value="Save changes">
+    <a href="index" class="btn btn-danger">Cancel</a>
+
+  </form>
+
+{% endblock %}
